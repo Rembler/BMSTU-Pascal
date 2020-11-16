@@ -1,0 +1,82 @@
+program Cone;
+
+{$APPTYPE CONSOLE}
+
+uses SysUtils;
+
+type TCone = object
+  height:integer;
+  radius:integer;
+  procedure init(ghei:integer; grad:integer);
+  procedure info;
+  function volume:real;
+  function square:real;
+end;
+
+procedure tcone.init;
+begin
+  height:=ghei;
+  radius:=grad;
+end;
+
+procedure tcone.info;
+begin
+  writeln('Height of the cone is ',height);
+  writeln('Radius of the cone is ',radius);
+end;
+
+function tcone.square;
+begin
+  result:=radius*radius*pi;
+end;
+
+function tcone.volume;
+begin
+  result:=(1/3)*square*height;
+end;
+
+type TConoid = object (TCone)
+  mirad:integer;
+  procedure newinit(ghei:integer; grad:integer; gmirad:integer);
+  procedure newinfo;
+  function newvol:real;
+  function squsur:real;
+end;
+
+procedure tconoid.newinit;
+begin
+  init(ghei,grad);
+  mirad:=gmirad;
+end;
+
+procedure tconoid.newinfo;
+begin
+  info;
+  writeln('Small radius of the conoid is ',mirad);
+end;
+
+function tconoid.newvol;
+begin
+  result:=volume-(1/3)*height*(mirad/radius)*pi*mirad*mirad;
+end;
+
+function tconoid.squsur;
+begin
+  result:=square+pi*mirad*mirad+(sqrt(height*height+(radius-mirad)*(radius-mirad)*pi*(radius+mirad)));
+end;
+
+var fig:tconoid;
+    inp:string;
+    inph,inpr,inpmr:integer;
+begin
+  readln(inph,inpr,inpmr);
+  fig.newinit(inph,inpr,inpmr);
+  readln(inp);
+  if (inp='INFO') then
+    fig.newinfo
+  else if (inp='VOLUME') then
+      writeln(fig.newvol)
+    else if (inp='SQUARE') then
+        writeln(fig.squsur);
+  readln;
+end.

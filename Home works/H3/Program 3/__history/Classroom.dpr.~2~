@@ -1,0 +1,76 @@
+program Classroom;
+
+{$APPTYPE CONSOLE}
+
+uses SysUtils;
+
+type
+  TMan = object
+    fam:string;
+    year:integer;
+    mark:byte;
+    procedure init(gf:string; gy:integer; gm:byte);
+    procedure info;
+    function age;
+  end;
+
+procedure tman.init;
+begin
+  fam:=gf;
+  year:=gy;
+  mark:=gm;
+end;
+
+procedure tman.info;
+begin
+  writeln('Surname: ',fam);
+  writeln('Year of birth: ',year);
+  writeln('Average mark: ',mark);
+  writeln;
+end;
+
+function tman.age;
+begin
+  result:=2019-year;
+end;
+
+type
+  TClass = object
+    pupil:array[1..20] of tman;
+    num:byte;
+    procedure massinit(gn:byte);
+    procedure massinfo;
+    function pivo;
+    function botan;
+  end;
+
+procedure tclass.massinit;
+var pi:integer;
+    a:array[1..20] of tman;
+begin
+  num:=gn;
+  for pi := 1 to num do
+    pupil[pi].init(a[pi].fam, a[pi].year, a[pi].mark);
+end;
+
+procedure tclass.massinfo;
+var pi:integer;
+begin
+  for pi := 1 to num do
+    pupil[pi].info;
+end;
+
+var mas:array[1..20] of tman;
+    inpn,i:integer;
+    idi:tclass;
+begin
+  readln(inpn);
+  randomize;
+  for i := 1 to inpn do
+  begin
+    readln(mas[i].fam);
+    mas[i].year:=random(6)+2000;
+    mas[i].mark:=random(5)+1;
+  end;
+  idi.massinit(inpn);
+end.

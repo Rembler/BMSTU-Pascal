@@ -1,0 +1,51 @@
+program Flashlight;
+
+{$APPTYPE CONSOLE}
+
+uses SysUtils;
+
+type
+  tlant = object
+    state:string;
+    procedure init(sdata:string);
+    procedure onoff;
+    procedure sort(sdata:string);
+    function info:string;
+  end;
+
+procedure tlant.init;
+begin
+  self.state:=sdata;
+end;
+
+procedure tlant.onoff;
+begin
+
+end;
+
+procedure tlant.sort;
+begin
+  case sdata of
+    'PRESS':tlant.onoff;
+    'INFO':tlant.info;
+  end;
+end;
+
+var flt:tlant;
+    inp:string;
+begin
+  writeln('Set starting state of the flashlight: ON or OFF');
+  readln(inp);
+  flt.init(inp);
+  while (inp<>'EXIT') do
+  begin
+    writeln('You can change state of the flashlight by pressing the button.');
+    writeln('For that just type "PRESS".');
+    writeln('If you want to know the current state of the flashlight type "INFO".');
+    writeln('You also can leave that flashlight alone.');
+    writeln('To do so type "EXIT".');
+    readln(inp);
+    flt.sort(inp);
+  end;
+  readln;
+  end.

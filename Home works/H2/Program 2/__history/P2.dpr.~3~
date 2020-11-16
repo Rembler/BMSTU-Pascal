@@ -1,0 +1,63 @@
+program P2;
+
+{$APPTYPE CONSOLE}
+
+uses SysUtils;
+
+var a:array[1..10,1..10] of integer;
+    i,j,n,m,nst,max,mst,buf:integer;
+
+begin
+  readln(n,m);
+  for i := 1 to n do
+    for j := 1 to m do
+      read(a[i,j]);
+  writeln;
+  for i := 1 to n do
+  begin
+    for j := 1 to m do
+      write(a[i,j],' ');
+    writeln;
+  end;
+  writeln;
+  j:=0;
+  nst:=0;
+  while (nst=0) do
+  begin
+    j:=j+1;
+    i:=0;
+    while ((nst=0) and (i<n)) do
+    begin
+      i:=i+1;
+      if (a[i,j]<0) then
+        nst:=i;
+    end;
+  end;
+  max:=a[1,1];
+  mst:=1;
+  for i := 1 to n do
+    for j := 1 to m do
+      if (a[i,j]>max) then
+      begin
+        max:=a[i,j];
+        mst:=i;
+      end;
+  if (mst=nst) then
+    writeln('It is the one line')
+  else begin
+    for j := 1 to m do
+    begin
+      buf:=a[mst,j];
+      a[mst,j]:=a[nst,j];
+      a[nst,j]:=buf;
+    end;
+    for i := 1 to n do
+    begin
+      for j := 1 to m do
+        write(a[i,j],' ');
+      writeln;
+    end;
+  end;
+  readln;
+  readln;
+end.

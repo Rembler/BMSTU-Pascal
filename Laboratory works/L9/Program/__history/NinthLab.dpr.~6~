@@ -1,0 +1,96 @@
+program NinthLab;
+
+{$APPTYPE CONSOLE}
+
+uses SysUtils;
+
+type  numpo = ^num;
+      num = record
+        cont: integer;
+        next: numpo;
+      end;
+
+var ini,cur,ext,max: numpo;
+    n,i: integer;
+
+function search(sub: integer):boolean;
+var fcur: numpo;
+    sres: boolean;
+begin
+  sres:=false;
+  fcur:=ini;
+  repeat
+    if (fcur^.cont=sub) then
+      sres:=true;
+    fcur:=fcur^.next;
+  until ((fcur^.next=nil) or (sres));
+  result:=sres;
+end;
+
+procedure print;
+begin
+  cur:=ini;
+  while (cur^.next<>nil) do
+  begin
+    write(cur^.cont,' ');
+    cur:=cur^.next;
+  end;
+  writeln(cur^.cont);
+  cur:=ini;
+end;
+
+begin
+  writeln('Enter number of elements');
+  readln(n);
+  writeln('Enter elements');
+  new(ini);
+  read(ini^.cont);
+  ini^.next:=nil;
+  cur:=ini;
+  for i := 1 to n-1 do
+  begin
+    new(ext);
+    read(ext^.cont);
+    ext^.next:=nil;
+    cur^.next:=ext;
+    if (search(ext^.cont)=false) then
+      cur:=ext
+    else
+    begin
+      dispose(ext);
+      cur^.next:=nil;
+    end;
+  end;
+  writeln('List without reiterations:');
+  print;
+  max:=ini;
+  while (cur^.next<>nil) do
+  begin
+    cur:=cur^.next;
+    if (cur^.cont>=max^.cont) then
+      max:=cur;
+  end;
+  writeln('Maximum element:');
+  writeln(max^.cont);
+  if (max=ini) then
+  begin
+    ini:=ini^.next;
+    dispose(max);
+    print;
+  end
+  else
+  begin
+    while (cur^.next<>nil) do
+    begin
+      if (cur^.next=max) then
+      begin
+        cur^.next:=max^.next;
+        dispose(max);
+      end;
+      cur:=cur^.next;
+    end;
+    print;
+  end;
+  readln;
+  readln;
+end.

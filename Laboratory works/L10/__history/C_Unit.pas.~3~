@@ -1,0 +1,53 @@
+unit C_Unit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Edit1: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Button5: TButton;
+    Button6: TButton;
+    Button7: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+var sum:real;
+    operation:char='@';
+
+{$R *.dfm}
+
+procedure operate;
+var s:string;
+    code:integer;
+    n:real;
+begin
+  s:=Form1.Edit1.text;
+  Form1.Edit1.clear;
+  val(s,n,code);
+  case operation of
+    '@': sum:=n;
+    '+': sum:=sum+n;
+    '-': sum:=sum-n;
+    '*': sum:=sum*n;
+    '/': sum:=sum/n;
+  end;
+end;
+
+
+end.

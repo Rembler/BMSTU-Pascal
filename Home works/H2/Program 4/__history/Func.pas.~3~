@@ -1,0 +1,19 @@
+unit Func;
+
+Interface
+  type mifu=function(x:real):real;
+  procedure intg(res:real;lb:real;rb:real;na:real;nfu:mifu);
+
+Implementation
+  procedure intg;
+  var i:integer;
+      stp:real;
+  begin
+    stp:=(rb-lb)/na;
+    res:=0;
+    for i := 0 to na do
+      res:=res+nfu(lb+stp*i);
+    res:=stp*res;
+  end;
+End.
+

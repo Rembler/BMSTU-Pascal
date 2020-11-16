@@ -1,0 +1,33 @@
+program FourthLab;
+
+{$APPTYPE CONSOLE}
+
+uses
+  SysUtils;
+
+var a:array[1..5] of real;
+    l,e1,e2:real;
+    i,j,n1,n2:integer;
+
+begin
+  l:=-1;
+  for i:=1 to 5 do
+    read(a[i]);
+  readln;
+  for i:=1 to 5 do
+    write(a[i]:10:6,' ');
+  writeln;
+  for i:=1 to 4 do
+    for j:=i+1 to 5 do
+      if (abs(a[j]-a[i])>=l) then
+      begin
+        e1:=a[i];
+        e2:=a[j];
+        n1:=i;
+        n2:=j;
+        l:=abs(a[j]-a[i]);
+      end;
+  writeln(n1,' ',e1:10:6);
+  writeln(n2,' ',e2:10:6);
+  readln;
+end.

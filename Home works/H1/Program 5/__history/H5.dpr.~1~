@@ -1,0 +1,13 @@
+program H5;
+
+{$APPTYPE CONSOLE}
+
+uses
+  SysUtils;
+
+Var x:integer;
+
+begin
+  x:=-x;
+  writeln(x);
+end.

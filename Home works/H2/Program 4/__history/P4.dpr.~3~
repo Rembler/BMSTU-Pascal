@@ -1,0 +1,20 @@
+program P4;
+
+{$APPTYPE CONSOLE}
+
+uses
+  SysUtils,
+  Func in 'Func.pas';
+
+var a:mas;
+    i,n:integer;
+
+begin
+  Write('Input n:');
+  ReadLn(n);
+  for i:=1 to n do
+    Read(a[i]);
+  ReadLn;
+  WriteLn('Sum=',sum(a,n));
+  ReadLn;
+end.

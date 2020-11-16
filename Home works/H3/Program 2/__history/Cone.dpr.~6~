@@ -1,0 +1,59 @@
+program Cone;
+
+{$APPTYPE CONSOLE}
+
+uses SysUtils;
+
+type TCone = object
+  height:integer;
+  radius:integer;
+  procedure init(ghei:integer; grad:integer);
+  procedure info;
+  function volume:real;
+  function square:real;
+  function resu(gdata:string):real;
+end;
+
+procedure tcone.init;
+begin
+  height:=ghei;
+  radius:=grad;
+end;
+
+procedure tcone.info;
+begin
+  writeln('Height of the cone is ',self.height);
+  writeln('Radius of the cone is ',self.radius);
+end;
+
+function tcone.square;
+begin
+  result:=radius*radius*pi;
+end;
+
+function tcone.volume;
+begin
+  result:=(1/3)*square*height;
+end;
+
+function tcone.resu;
+begin
+  if (gdata='VOLUME') then
+    result:=volume
+  else if (gdata='SQUARE') then
+      result:=square;
+end;
+
+var fig:tcone;
+    inp:string;
+    inph,inpr:integer;
+begin
+  readln(inph,inpr);
+  fig.init(inph,inpr);
+  readln(inp);
+  if (inp='INFO') then
+    fig.info
+  else
+    writeln(fig.resu(inp));
+  readln;
+end.

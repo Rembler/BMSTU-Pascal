@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019.12.05 00:37:29.802.pas,C:\Users\Rembler-Koto\Documents\Borland Studio Projects\Unit1.pas=E:\HW\Laboratory works\L10\Notebook\N_Unit.pas</Transaction>
+    <Transaction>2019.12.05 00:37:29.802.dfm,C:\Users\Rembler-Koto\Documents\Borland Studio Projects\Unit1.dfm=E:\HW\Laboratory works\L10\Notebook\N_Unit.dfm</Transaction>
+    <Transaction>2019.12.05 00:37:38.426.bdsproj,C:\Users\Rembler-Koto\Documents\Borland Studio Projects\Project1.bdsproj=E:\HW\Laboratory works\L10\Notebook\Note.bdsproj</Transaction>
+    <Transaction>2019.12.05 00:38:07.739.pas,E:\HW\Laboratory works\L10\Notebook\Unit2.pas=E:\HW\Laboratory works\L10\Notebook\NA_Unit.pas</Transaction>
+    <Transaction>2019.12.05 00:38:07.739.dfm,E:\HW\Laboratory works\L10\Notebook\Unit2.dfm=E:\HW\Laboratory works\L10\Notebook\NA_Unit.dfm</Transaction>
+    <Transaction>2019.12.05 00:38:15.035.pas,E:\HW\Laboratory works\L10\Notebook\NA_Unit.pas=E:\HW\Laboratory works\L10\Notebook\NS_Unit.pas</Transaction>
+    <Transaction>2019.12.05 00:38:15.035.dfm,E:\HW\Laboratory works\L10\Notebook\NA_Unit.dfm=E:\HW\Laboratory works\L10\Notebook\NS_Unit.dfm</Transaction>
+    <Transaction>2019.12.05 00:38:28.343.pas,E:\HW\Laboratory works\L10\Notebook\NS_Unit.pas=E:\HW\Laboratory works\L10\Notebook\NA_Unit.pas</Transaction>
+    <Transaction>2019.12.05 00:38:28.343.dfm,E:\HW\Laboratory works\L10\Notebook\NS_Unit.dfm=E:\HW\Laboratory works\L10\Notebook\NA_Unit.dfm</Transaction>
+    <Transaction>2019.12.05 00:38:35.486.pas,E:\HW\Laboratory works\L10\Notebook\NA_Unit.pas=E:\HW\Laboratory works\L10\Notebook\NS_Unit.pas</Transaction>
+    <Transaction>2019.12.05 00:38:35.486.dfm,E:\HW\Laboratory works\L10\Notebook\NA_Unit.dfm=E:\HW\Laboratory works\L10\Notebook\NS_Unit.dfm</Transaction>
+    <Transaction>2019.12.05 00:38:46.431.pas,E:\HW\Laboratory works\L10\Notebook\NS_Unit.pas=E:\HW\Laboratory works\L10\Notebook\NA_Unit.pas</Transaction>
+    <Transaction>2019.12.05 00:38:46.431.dfm,E:\HW\Laboratory works\L10\Notebook\NS_Unit.dfm=E:\HW\Laboratory works\L10\Notebook\NA_Unit.dfm</Transaction>
+    <Transaction>2019.12.05 00:38:52.443.pas,E:\HW\Laboratory works\L10\Notebook\Unit3.pas=E:\HW\Laboratory works\L10\Notebook\NS_Unit.pas</Transaction>
+    <Transaction>2019.12.05 00:38:52.443.dfm,E:\HW\Laboratory works\L10\Notebook\Unit3.dfm=E:\HW\Laboratory works\L10\Notebook\NS_Unit.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

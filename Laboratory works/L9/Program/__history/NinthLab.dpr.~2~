@@ -1,0 +1,50 @@
+program NinthLab;
+
+{$APPTYPE CONSOLE}
+
+uses SysUtils;
+
+type  numpo = ^num;
+      num = record
+        cont: integer;
+        next: numpo;
+      end;
+
+var ini,cur,ext: numpo;
+    n,i: integer;
+    clon: boolean;
+
+function search(sub: integer):boolean;
+var fcur: numpo;
+    sres: boolean;
+begin
+  sres:=false;
+  fcur:=ini;
+  repeat
+    if (fcur^.cont=sub) then
+      sres:=true;
+    fcur:=fcur^.next;
+  until ((fcur^.next=nil) or (sres));
+  result:=sres;
+end;
+
+begin
+  writeln('Enter number of elements');
+  readln(n);
+  writeln('Enter elements');
+  new(ini);
+  readln(ini^.cont);
+  ini^.next:=nil;
+  cur:=ini;
+  for i := 1 to n-1 do
+  begin
+    new(ext);
+    readln(ext^.cont);
+    ext^.next:=nil;
+    cur^.next:=ext;
+    cur:=ext;
+    clon:=search(cur^.cont);
+    writeln(clon,' ');
+  end;
+  readln;
+end.

@@ -1,0 +1,36 @@
+program P4;
+
+{$APPTYPE CONSOLE}
+
+uses
+  SysUtils,
+  Func in 'Func.pas';
+
+var i,fl:integer;
+    a,b,n,s:real;
+
+function fsin(x:real):real;
+begin
+  result:=sin(x)/x;
+end;
+
+function ftan(x:real):real;
+begin
+  result:=(sin(x+1)/cos(x+1))/(x+1);
+end;
+
+begin
+  writeln('Enter left and right borders');
+  readln(a,b);
+  writeln('Enter step');
+  readln(n);
+  writeln('Enter "1" if you want sin(x)/x');
+  writeln('Enter "2" if you want tan(x+1)/(x+1)');
+  readln(fl);
+  if (fl=1) then
+    intg(s,a,b,fsin)
+  else
+    intg(s,a,b,ftan);
+  writeln('Result is ',s);
+  readln;
+end.

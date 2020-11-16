@@ -1,0 +1,85 @@
+unit NS_Unit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+
+  zap=record
+     fam:string[22]; 		{Фамилия}
+     name:string[22];		{Имя}
+     fon:string[22]; 		{Телефон}
+     adr:string[22];		{Адрес}
+      end;
+
+  TForm2 = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Edit1Change(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+  f:file of zap;
+  z:zap;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.Button1Click(Sender: TObject);
+var c:integer;
+    fam:string[22];
+begin
+   c:=1;
+   fam:=edit1.text;
+   while not eof(f) do
+      begin
+        read(f,z);
+        if fam=z.fam then
+           begin
+              c:=0;
+              edit2.text:=z.name;
+              edit3.text:=z.fon;
+              edit4.text:=z.adr;
+              break;
+           end;
+      end;
+   if c<>0 then
+      begin
+         edit3.text:='No data';
+      end;
+   reset(f);
+   end;
+
+procedure TForm2.Button2Click(Sender: TObject);
+begin
+  closefile(f);
+   self.hide;
+end;
+
+procedure TForm2.Edit1Change(Sender: TObject);
+begin
+  edit2.clear;
+  edit3.Clear;
+  edit4.clear;
+end;
+
+end.

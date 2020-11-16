@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019.09.28 10:53:26.687.bdsproj,C:\Documents and Settings\user\Мои документы\Borland Studio Projects\Project4.bdsproj=C:\Documents and Settings\user\Мои документы\Borland Studio Projects\12Б\ThirdLab.bdsproj</Transaction>
+    <Transaction>2019.09.28 11:00:15.765.bdsproj,C:\Documents and Settings\user\Мои документы\Borland Studio Projects\12Б\ThirdLab.bdsproj=C:\Documents and Settings\user\Мои документы\Borland Studio Projects\12Б\ThirdLabUntil.bdsproj</Transaction>
+    <Transaction>2019.09.28 11:05:19.093.bdsproj,C:\Documents and Settings\user\Мои документы\Borland Studio Projects\12Б\ThirdLabUntil.bdsproj=C:\Documents and Settings\user\Мои документы\Borland Studio Projects\12Б\ThirdLabWhile.bdsproj</Transaction>
+  </Transactions>
+</BorlandProject>

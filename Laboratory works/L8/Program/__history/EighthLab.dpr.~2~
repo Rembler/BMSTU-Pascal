@@ -1,0 +1,45 @@
+program EighthLab;
+
+{$APPTYPE CONSOLE}
+
+uses SysUtils;
+
+var f1,f2:text;
+    a,n,i:integer;
+    b:char;
+
+begin
+  assignfile(f1,'F.txt');
+  assignfile(f2,'G.txt');
+  writeln('Enter number of elements');
+  readln(n);
+  writeln('Enter the elements');
+  rewrite(f1);
+  for i := 1 to n do
+  begin
+    read(a);
+    write(f1,a,' ');
+  end;
+  writeln('File "F.txt" contains:');
+  rewrite(f2);
+  reset(f1);
+  while (eof(f1)=false) do
+  begin
+    read(f1,a,b);
+    write(a,' ');
+    if (a mod 2<>0) then
+      write(f2,a,' ');
+  end;
+  writeln;
+  writeln('File "G.txt" contains:');
+  reset(f2);
+  while (eof(f2)=false) do
+  begin
+    read(f2,a,b);
+    write(a,' ');
+  end;
+  close(f2);
+  close(f1);
+  readln;
+  readln;
+end.

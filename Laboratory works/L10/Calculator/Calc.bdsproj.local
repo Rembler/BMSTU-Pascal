@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019.12.04 21:40:19.064.pas,C:\Users\Rembler-Koto\Documents\Borland Studio Projects\Unit1.pas=E:\HW\Laboratory works\L10\C_Unit.pas</Transaction>
+    <Transaction>2019.12.04 21:40:19.064.dfm,C:\Users\Rembler-Koto\Documents\Borland Studio Projects\Unit1.dfm=E:\HW\Laboratory works\L10\C_Unit.dfm</Transaction>
+    <Transaction>2019.12.04 21:40:39.939.bdsproj,C:\Users\Rembler-Koto\Documents\Borland Studio Projects\Project1.bdsproj=E:\HW\Laboratory works\L10\Calc.bdsproj</Transaction>
+  </Transactions>
+</BorlandProject>

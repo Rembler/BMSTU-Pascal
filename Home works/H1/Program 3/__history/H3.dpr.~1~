@@ -1,0 +1,17 @@
+program H3;
+
+{$APPTYPE CONSOLE}
+
+uses
+  SysUtils;
+
+var x,s,c,sum:real;
+
+begin
+  readln(x);
+  s:=sin(x);
+  c:=cos(x);
+  sum:=s*s+c*c;
+  writeln(sum:20:16);
+  readln;
+end.

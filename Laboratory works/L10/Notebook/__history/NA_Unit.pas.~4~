@@ -1,0 +1,71 @@
+unit NA_Unit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+
+  zap=record
+    surn:string[22];
+    name:string[22];
+    numb:string[22];
+    addr:string[22];
+  end;
+
+  TForm3 = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Edit1Change(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form3: TForm3;
+  f:file of zap;
+  z:zap;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm3.Button1Click(Sender: TObject);
+begin
+  assignfile(f,'phone.dat');
+  rewrite(f);
+  z.surn:=edit1.Text;
+  z.name:=edit2.Text;
+  z.numb:=edit3.Text;
+  z.addr:=edit4.Text;
+  write(f,z);
+  closefile(f);
+end;
+
+procedure TForm3.Button2Click(Sender: TObject);
+begin
+  self.Hide;
+end;
+
+procedure TForm3.Edit1Change(Sender: TObject);
+begin
+  edit2.clear;
+  edit3.Clear;
+  edit4.clear;
+end;
+
+end.

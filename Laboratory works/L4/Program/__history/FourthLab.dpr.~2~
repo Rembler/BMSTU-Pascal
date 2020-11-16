@@ -1,0 +1,37 @@
+program FourthLab;
+
+{$APPTYPE CONSOLE}
+
+uses
+  SysUtils;
+
+var a:array[1..5] of real;
+    max,min:real;
+    i,nmax,nmin:integer;
+
+begin
+  max:=-1;
+  min:=1e38;
+  for i := 1 to 5 do
+    read(a[i]);
+  readln;
+  for i := 1 to 5 do
+    write(a[i]:10:6,' ');
+  writeln;
+  for i := 1 to 5 do
+  begin
+    if (a[i]>=max) then
+    begin
+      max:=a[i];
+      nmax:=i;
+    end;
+    if (a[i]<=min) then
+    begin
+      min:=a[i];
+      nmin:=i;
+    end;
+  end;
+  writeln(nmin,' ',min:10:6);
+  writeln(nmax,' ',max:10:6);
+  readln;
+end.
